@@ -126,6 +126,8 @@ The above call will return instances for all the jobs added to the queue.
 
 {% hint style="info" %}
 Note that the parent queue does not need to be the same queue as the one used for the children.
+
+When using Redis Cluster, all queues participating in a flow must share the same hash slot. Use a common hash tag in their prefixes, even when the queue names differ. See [Redis Cluster](../../patterns/redis-cluster.md#flows) for an example.
 {% endhint %}
 
 {% hint style="warning" %}
